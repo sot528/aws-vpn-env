@@ -309,6 +309,12 @@ Resources:
           ToPort: '1701'
           CidrIp: 0.0.0.0/0
 
+  EIPAssociation:
+    Type: 'AWS::EC2::EIPAssociation'
+    Properties:
+      AllocationId: !ImportValue 'vpneip-EIPAllocationId'
+      InstanceId: !Ref VPNServerInstance
+
 Outputs:
   VPNServerAddress:
     Description: Use the IP as Server Address or VPN Host
