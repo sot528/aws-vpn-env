@@ -31,12 +31,15 @@ Parameters:
     Type: String
     Default: Standard.VPN-t2.micro
     AllowedValues:
+      - Minimum.VPN-t3.nano
       - Standard.VPN-t2.micro
       - High.Speed.VPN-t2.medium
       - Ultra.High.Speed.VPN-m3.xlarge
 
 Mappings:
   AWSInstanceType2Arch:
+    Minimum.VPN-t3.nano:
+      InstanceType: t3.nano
     Standard.VPN-t2.micro:
       InstanceType: t2.micro
     High.Speed.VPN-t2.medium:
