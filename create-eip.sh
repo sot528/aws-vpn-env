@@ -3,7 +3,7 @@
 aws cloudformation deploy \
   --template-file create-eip.yaml \
   --capabilities CAPABILITY_IAM \
-  --stack-name vpneip$1
+  --stack-name ${EIP_PREFIX}
 
 # Notification
 if [ "$(uname)" == 'Darwin' ]; then

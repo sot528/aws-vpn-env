@@ -2,3 +2,4 @@ export USER_NAME=foobar
 export VPN_PASSWORD=foobar
 export VPN_PHRASE=foobar
 export SIZE=Standard.VPN-t2.micro
+export EIP_PREFIX=vpneip

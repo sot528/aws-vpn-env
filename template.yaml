@@ -35,6 +35,10 @@ Parameters:
       - Standard.VPN-t2.micro
       - High.Speed.VPN-t2.medium
       - Ultra.High.Speed.VPN-m3.xlarge
+  EIPPREFIX:
+    Description: EIP Prefix
+    Type: String
+    Default: vpneip
 
 Mappings:
   AWSInstanceType2Arch:
@@ -315,8 +319,9 @@ Resources:
   EIPAssociation:
     Type: 'AWS::EC2::EIPAssociation'
     Properties:
-      AllocationId: !ImportValue 'vpneip-EIPAllocationId'
+      AllocationId: Fn::ImportValue !Sub {!Ref EIPPREFIX ,'-EIPAllocationId'}
       InstanceId: !Ref VPNServerInstance
+      #      AllocationId: !ImportValue !Sub !Ref EIPPREFIX ,'-EIPAllocationId'
 
 Outputs:
   VPNServerAddress:
