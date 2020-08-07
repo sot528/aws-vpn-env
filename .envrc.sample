@@ -2,14 +2,3 @@ export USER_NAME=foobar
 export VPN_PASSWORD=foobar
 export VPN_PHRASE=foobar
 export SIZE=Standard.VPN-t2.micro
-
-# --- AWS ---
-
-## aws-cli
-## aws-cliが依存する環境変数。
-##   - see: https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-environment.html
-## .credentialsファイルよりもこちらの環境変数が優先される
-## Cloud formationのデプロイやS3作成など重要な操作を行うため、管理者レベルの権限を持つ必要がある。
-export AWS_DEFAULT_REGION=ap-northeast-1
-export AWS_ACCESS_KEY_ID=AKIAJZCGSXXXXXXXXXX
-export AWS_SECRET_ACCESS_KEY=iU6/q6ls5i5pDBPxxxxxxxxxxxxxxxxxxxx
